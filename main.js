@@ -41,9 +41,11 @@ function clicar() {
       golTime1Aposta = prompt(`Quantos gols o ${time1} marcou? `);
       goltime2Aposta = prompt(`Quantos gols o ${time2} marcou? `)
 
-      // if (isNaN(golTime1Aposta) || isNaN(golTime2Aposta)) {
-      //   alert('você não escolheu valores válidos!')
-      // } else {
+      if (isNaN(golTime1Aposta) || isNaN(goltime2Aposta)) {
+        
+        alert('você não escolheu valores válidos!');
+
+      } else {
 
         showResults.innerHTML += `<h2> O placar final da partida foi: 
       <span style="color:rgb(53, 252, 63)" >${time1} <span style="color:black">${golsFeitoTime1}</span>
@@ -70,8 +72,8 @@ function clicar() {
 
         time1 = document.querySelector('#time1').value = '';
         time1 = document.querySelector('#time2').value = '';
-      
 
+      }
     }
   }
 
