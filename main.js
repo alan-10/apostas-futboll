@@ -41,22 +41,22 @@ function clicar() {
       golTime1Aposta = prompt(`Quantos gols o ${time1} marcou? `);
       goltime2Aposta = prompt(`Quantos gols o ${time2} marcou? `)
 
-      if((typeof golTime1Aposta  != 'number') || (typeof golTime2Aposta  != 'number') ){
-        alert('você não escolheu valores válidos!')
-      } else{
-        
-      showResults.innerHTML += `<h2> O placar final da partida foi: 
+      // if (isNaN(golTime1Aposta) || isNaN(golTime2Aposta)) {
+      //   alert('você não escolheu valores válidos!')
+      // } else {
+
+        showResults.innerHTML += `<h2> O placar final da partida foi: 
       <span style="color:rgb(53, 252, 63)" >${time1} <span style="color:black">${golsFeitoTime1}</span>
           <span style="color:blue"> x </span>
       <span style="color:black"> ${golsFeitoTime2}</span> ${time2} </span> </h2> `
-  
-  
+
+
         showResults.innerHTML += `<h2> A sua aposta foi:
       <span  style="color:rgb(53, 252, 63)"> ${time1} <span style="color:black"> 
       ${golTime1Aposta}</span>
        <span style="color:blue">x</span>
          <span style="color:black">${goltime2Aposta}</span> ${time2} </span> </h2>`
-  
+
         if (golTime1Aposta == golsFeitoTime1 && goltime2Aposta == golsFeitoTime2) {
           showResults.innerHTML += `<h1 style="color:blue;background-color:black;width:300px;
            padding:10px;">PARAAAAABÉNS VOCÊ ACERTOU O  PLACAR! :)</h1> <hr/>`;
@@ -66,13 +66,14 @@ function clicar() {
            padding:10px;"> <strong>QUE PENA,
             VOCÊ ERROU! TALVEZ NA PRÓXIMA! :( </strong></h1>  <hr/>`;
         }
-  
-      }
-      time1 = document.querySelector('#time1').value = '';
-      time1 = document.querySelector('#time2').value = '';
-  
+
+
+        time1 = document.querySelector('#time1').value = '';
+        time1 = document.querySelector('#time2').value = '';
+      
+
     }
-      }
+  }
 
 
 
