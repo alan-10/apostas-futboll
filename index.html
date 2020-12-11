@@ -4,44 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Apostas</title>
-    <style>
-        header {
-            font-family: fantasy;
-        }
 
-        body {
-            background-color: rgb(65, 12, 12);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        form#idForm {
-            margin: 13px;
-            color: rgb(53, 252, 63);
-            font-size: 20pt;
-        }
-
-        div#area {
-            background-color: rgb(0, 255, 13);
-            height: 100px;
-            text-align: center;
-            color: brown;
-            line-height: 100px;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 
 <body>
     <header>
-        <div id="area">
+        <div id="area" class="div-area">
             <h1>**Apostas de jogos de futbol**</h1>
-
-
         </div>
-        <div>
-
-        </div>
+        
     </header>
     <main>
         <div>
@@ -49,20 +22,16 @@
             <form action="" id="idForm">
                 <p>
                     <label for="time1"> Primeiro time </label>
-                    <input type="text" id="time1" placeholder="informe o primeiro time">
+                    <input type="text" id="time1"class="input-text"  placeholder="informe o primeiro time">
 
                 </p>
                 <label for="time2">Segundo time</label>
-                <input type="text" id="time2" placeholder="informe o segundo time">
+                <input type="text" id="time2" class="input-text" placeholder="informe o segundo time">
 
 
 
             </form>
-            <button id="play" style="background-color:
-                blue;color: white; 
-                padding: 10px;width: 
-                200px;border-radius: 15px;
-                font-size: 16pt;"> Jogar
+            <button id="play"> Jogar
             </button>
         </div>
 
@@ -72,82 +41,7 @@
 
 
     </footer>
-    <script>
-        let buttonPay = document.querySelector('#play');
-        buttonPay.addEventListener('click',clicar);
-
-
-        let showResults = document.querySelector('#idShow');
-
-        let golsFeitoTime1;
-        let golsFeitoTime2;
-
-
-
-        function gerarNumerosAleatorios(min, max) {
-            golsFeitoTime1 = Math.floor(Math.random() * max) + min;
-            golsFeitoTime2 = Math.floor(Math.random() * max) + min;
-        }
-
-
-
-        function clicar() {
-            let golTime1Aposta = 0;
-            let goltime2Aposta = 0;
-
-            let time1 = document.querySelector('#time1').value;
-            let time2 = document.querySelector('#time2').value;
-
-            gerarNumerosAleatorios(0, 5);
-
-            if (time1 == '' || time2 == '') {
-                return alert('informe os times para jogar!');
-            } else {
-
-
-
-                let partida = confirm('Os times começaram a jogar! faça sua aposta no proximo passo!');
-
-                if (partida == false) {
-                    alert('Partida canselada')
-                } else {
-
-                    
-                golTime1Aposta = prompt(`Quantos gols o ${time1} marcou? `);
-                goltime2Aposta = prompt(`Quantos gols o ${time2} marcou? `)
-
-                
-                showResults.innerHTML += `<h2> O placar final da partida foi: 
-            <span style="color:rgb(53, 252, 63)" >${time1} <span style="color:black">${golsFeitoTime1}</span>
-                <span style="color:blue"> x </span>
-            <span style="color:black"> ${golsFeitoTime2}</span> ${time2} </span> </h2> `
-
-
-                showResults.innerHTML += `<h2> A sua aposta foi:
-            <span  style="color:rgb(53, 252, 63)"> ${time1} <span style="color:black"> 
-            ${golTime1Aposta}</span>
-             <span style="color:blue">x</span>
-               <span style="color:black">${goltime2Aposta}</span> ${time2} </span> </h2>`
-
-                if (golTime1Aposta == golsFeitoTime1 && goltime2Aposta == golsFeitoTime2) {
-                    showResults.innerHTML += `<h1 style="color:blue;background-color:black;width:300px;
-                 padding:10px;">PARAAAAABÉNS VOCÊ ACERTOU O  PLACAR! :)</h1> <hr/>`;
-                } else {
-                    showResults.innerHTML += `<h1 style="color:red;
-                 background-color:black;width:300px;
-                 padding:10px;"> <strong>QUE PENA,
-                  VOCÊ ERROU! TALVEZ NA PRÓXIMA! :( </strong></h1>  <hr/>`;
-                }
-
-            }
-
-                }
-
-
-
-
-        }
-    </script>
+    <script src="./main.js" ></script>
 </body>
 
 </html>
