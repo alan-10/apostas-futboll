@@ -42,20 +42,21 @@ function clicar() {
       goltime2Aposta = prompt(`Quantos gols o ${time2} marcou? `);
 
       if ((isNaN(golTime1Aposta) || isNaN(goltime2Aposta))
-       || 
-       ((golTime1Aposta === '' )|| goltime2Aposta === '' ) || golTime1Aposta.trim() === '') {
-        
+        ||
+        ((golTime1Aposta === '') || goltime2Aposta === '')
+        || (golTime1Aposta.trim() === '') || (goltime2Aposta.trim() === '')) {
+
         alert('você não escolheu valores válidos!');
 
       } else {
 
-        showResults.innerHTML += `<h2> O placar final da partida foi: 
+        showResults.innerHTML += `<h2> O placar final da partida foi: <br/>
       <span style="color:rgb(53, 252, 63)" >${time1} <span style="color:black">${golsFeitoTime1}</span>
           <span style="color:blue"> x </span>
       <span style="color:black"> ${golsFeitoTime2}</span> ${time2} </span> </h2> `
 
 
-        showResults.innerHTML += `<h2> A sua aposta foi:
+        showResults.innerHTML += `<h2> A sua aposta foi: <br/>
       <span  style="color:rgb(53, 252, 63)"> ${time1} <span style="color:black"> 
       ${golTime1Aposta}</span>
        <span style="color:blue">x</span>
