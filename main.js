@@ -39,9 +39,11 @@ function clicar() {
 
 
       golTime1Aposta = prompt(`Quantos gols o ${time1} marcou? `);
-      goltime2Aposta = prompt(`Quantos gols o ${time2} marcou? `)
+      goltime2Aposta = prompt(`Quantos gols o ${time2} marcou? `);
 
-      if (isNaN(golTime1Aposta) || isNaN(goltime2Aposta)) {
+      if ((isNaN(golTime1Aposta) || isNaN(goltime2Aposta))
+       || 
+       ((golTime1Aposta === '' )|| goltime2Aposta === '' ) || golTime1Aposta.trim() === '') {
         
         alert('você não escolheu valores válidos!');
 
